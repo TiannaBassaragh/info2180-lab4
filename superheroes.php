@@ -65,8 +65,40 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+header("Content-Type: text/html; charset=UTF-8");
+
+$query = isset($_GET['query']) ? trim($_GET['query']) : "";
+
+// if no query, return full list
+if ($query === "") {
+    echo "<ul>";
+    foreach ($superheroes as $superhero) {
+        echo "<li>{$superhero['alias']}</li>";
+    }
+    echo "</ul>";
+    exit();
+}
+
+$query = strtolower($query);
+$found = null;
+
+// Search for alias or real name
+foreach ($superheroes as $hero) {
+    if (
+        strtolower($hero['alias']) === $query ||
+        strtolower($hero['name']) === $query
+    ) {
+        $found = $hero;
+        break;
+    }
+}
+
+if ($found) {
+    echo "<h3>{$found['alias']}</h3>";
+    echo "<h4>A.K.A {$found['name']}</h4>";
+    echo "<p>{$found['biography']}</p>";
+} else {
+    echo "<p class='error'>SUPERHERO NOT FOUND</p>";
+}
+?>

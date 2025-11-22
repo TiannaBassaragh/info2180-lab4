@@ -1,0 +1,121 @@
+:root {
+    --purple-dark: #3a1c71;
+    --purple-mid: #6a0572;
+    --purple-light: #c77dff;
+    --purple-glow: #ae3ec9;
+    --purple-deep: #0d0d2b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* background: #ececec; */
+    background: radial-gradient(circle at top, #2b1e5a, var(--purple-deep));
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* background: #3d7ea6; */
+    background: linear-gradient(to right, var(--purple-dark), var(--purple-mid), var(--purple-light));
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    /* background: white; */
+    background: rgba(255, 255, 255, 0.12);
+    color: #f2e9ff;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 0px 25px rgba(199, 125, 255, 0.2);
+}
+
+label {
+    font-weight: bold;
+    color: #edd8ff;
+}
+
+#search-bar {
+    display: flex;
+    margin: 10px 0 20px;
+}
+
+#search-bar input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+#search-bar input::placeholder {
+    color: #d6baff;
+}
+
+/* #search-bar button {
+    padding: 10px 20px;
+    background: #d9534f;
+    color: white;
+    border: none;
+    cursor: pointer;
+} */
+
+#search-bar button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background: var(--purple-glow);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(174, 62, 201, 0.7);
+}
+
+#search-bar button:hover {
+    background: #d66bff;
+    box-shadow: 0px 0px 15px rgba(214, 107, 255, 1);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+h3 {
+    color: #e5b3ff;
+    text-transform: uppercase;
+}
+
+h4 {
+    color: #d6baff;
+    font-weight: normal;
+    margin-top: -10px;
+}
+
+p {
+    color: #f2e9ff;
+}
+
+ul li {
+    color: #f0d5ff;
+    padding: 3px 0;
+}
+
+.error {
+    color: #ff4f88;
+    font-weight: bold;
+}
